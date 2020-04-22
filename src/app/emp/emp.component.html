@@ -1,0 +1,25 @@
+<div class="form-control ">
+        <h3 class="h3">Login</h3>
+        <form action="emp.html" >
+            <input class="center-block" type='text' name="Email" id="" placeholder="Email Id" required>
+
+            <input class="center-block" type='text' name="MPassword" id="" placeholder="Password" required>
+            <br>
+            <div class="but">
+            <button style="margin-right: 30px" type="submit" class="btn  btn-outline-primary">Login</button>
+            <button  type="reset" class="btn btn-outline-secondary" >Cancel</button>
+            </div>
+        </form>
+         <br>
+
+<div *ngIf="emp?.length > 0; else noEmp">
+  <ul *ngfor="let emp1 of emp">
+<li><strong>{{emp1.firstname}}: </strong>{{emp1.lastname}}</li>
+  </ul>
+
+</div>
+<ng-template #noEmp>
+  <h4> there are no items</h4>
+
+</ng-template>
+</div>

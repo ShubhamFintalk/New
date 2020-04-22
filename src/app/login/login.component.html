@@ -1,0 +1,28 @@
+<div class="form-control ">
+
+        <h3 class="h3">Sign In</h3>
+        <form [formGroup]="loginForm" (ngSubmit)="onLoginSubmit()">
+
+          <div>
+            <input class="center-block" type="email" placeholder="Email Id" formControlName="userEmail"  [ngClass]="{ 'is-invalid': submitted && f.userEmail.errors }" />
+            <div *ngIf="submitted && f.userEmail.errors" class="invalid-feedback">
+              <div *ngIf="f.userEmail.errors.required">User email id is required</div>
+            </div>
+          </div>
+
+          <div>
+            <input class="center-block" type="password" placeholder="User Password" formControlName="userPassword"  [ngClass]="{ 'is-invalid': submitted && f.userPassword.errors }" />
+            <div *ngIf="submitted && f.userPassword.errors" class="invalid-feedback">
+              <div *ngIf="f.userPassword.errors.required">User password is required</div>
+            </div>
+          </div>
+            <br>
+            <div class="but">
+            <button style="margin-right: 30px" type="submit" class="btn  btn-outline-primary">Login</button>
+            <button  type="reset" class="btn btn-outline-secondary" >Cancel</button>
+            </div>
+        </form>
+         <br>
+
+        <div class="h2">Already have an account? <a style="color:#007BEA" routerLink="/signup">SignUp</a></div>
+</div>
